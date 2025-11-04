@@ -1,0 +1,18 @@
+# Tech Simple - Production Website
+
+## Live URLs
+Website: https://d2gtcrpaoxe8s1.cloudfront.net
+
+## AWS Resources
+CloudFront Distribution ID: E29S00CKVCQ2LL
+S3 Bucket: tech-simple-website-84d8430bbbdc5b3b
+S3 Website Endpoint: tech-simple-website-84d8430bbbdc5b3b.s3-website-us-east-1.amazonaws.com
+
+## Quick Commands
+# Upload changes:
+CD /website
+aws s3 sync . s3://tech-simple-website-84d8430bbbdc5b3b/ --delete
+
+# Invalidate cache:
+CD /terraform
+aws cloudfront create-invalidation --distribution-id E29S00CKVCQ2LL --paths "/*"
